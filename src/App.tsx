@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import AdComponent from "./AdComponent"; // Import the AdComponent
 
 function App() {
   const [targetDistance, setTargetDistance] = useState("");
@@ -113,6 +114,9 @@ function App() {
         />
         <div>Wind Direction: {windDirection}°</div>
       </div>
+
+      {/* Ad Component */}
+      <AdComponent />
 
       <div className="result">{result}</div>
     </div>
