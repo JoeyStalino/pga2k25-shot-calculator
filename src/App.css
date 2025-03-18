@@ -1,0 +1,258 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif; /* Clean, professional font */
+  background: linear-gradient(180deg, #0a0a0a, #1a1a1a); /* Dark gray gradient */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* App Container */
+.app-container {
+  background: #121212; /* Dark, matte background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo Section */
+.logo {
+  grid-column: span 2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo h1 {
+  font-size: 2.5em;
+  color: #00bcd4; /* Professional blue accent */
+  margin: 0;
+}
+
+.logo p {
+  font-size: 1.2em;
+  color: #ffffff;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Labels */
+label {
+  grid-column: span 2;
+  text-align: left;
+  font-size: 1em;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* Input Fields */
+input {
+  grid-column: span 2;
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #00bcd4;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+/* Buttons */
+button {
+  padding: 12px 25px;
+  background: #00bcd4; /* Professional blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #008ba3; /* Darker blue on hover */
+  box-shadow: 0 6px 15px rgba(0, 188, 212, 0.5);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 188, 212, 0.3);
+}
+
+/* Result Display */
+.result {
+  grid-column: span 2;
+  margin-top: 20px;
+  font-size: 2em;
+  text-align: center;
+  color: #00bcd4;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Wind Compass */
+.wind-visual {
+  grid-column: span 2;
+  width: 200px;
+  height: 200px;
+  background: #1e1e1e;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+}
+
+.wind-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.wind-arrow::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 80px;
+  background: #00bcd4; /* Professional blue */
+  border-radius: 2px;
+}
+
+.wind-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 16px solid #00bcd4;
+}
+
+/* Compass Labels */
+.compass-labels {
+  position: absolute;
+  font-size: 1em;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.compass-labels.north {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compass-labels.east {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.compass-labels.south {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compass-labels.west {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styling the slider track */
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #555555; /* Lighter gray for better contrast */
+  border-radius: 4px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+input[type="range"]:focus {
+  background: #555555; /* Keep the track color consistent */
+}
+
+/* Styling the slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #00bcd4; /* Vibrant blue for the thumb */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #008ba3; /* Slightly darker blue on hover */
+}
+
+/* Styling for Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #00bcd4; /* Vibrant blue for the thumb */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background: #008ba3; /* Slightly darker blue on hover */
+}
+
+/* Styling the slider track for Firefox */
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background: #555555; /* Lighter gray for better contrast */
+  border-radius: 4px;
+  outline: none;
+}
